@@ -18,6 +18,12 @@
       <h1> Todo List </h1>
   </div>
     <div class="todo" ng-controller="TodoController as todo">
+      <form class="todo__form ml-5"  ng-submit="todo.addTodo();">
+        <input type="text" placeholder="Add new Todo" ng-model="todo.newTitle">
+        <input type="text" placeholder="Add Category" ng-model="todo.newCategory">
+        <input type="text" placeholder="Add Difficulty" ng-model="todo.newDifficulty">
+        <input type="submit">
+      </form>
       <ul class="todo__list" >
         <li
           ng-class="{
@@ -30,11 +36,26 @@
           <label class="toggle" for="todo-{{ $index }}"></label>
           <div class="d-flex justify-content-between">
             <div> <p> {{ item.title }} </p> </div>
-            <div> <input type="text" ng-model="item.title"> </div>
+            <div> <p> {{ item.type }} </p> </div>
+            <div> <a href="" ng-click="todo.addToFavorite(item);"> Add to Favorite </a> </div>
           </div>
         </li>
       </ul>
+      <div class="d-flex justify-content-center">
+        <h1> Favorites List </h1>
     </div>
+      <div class="todo">
+        <ul>
+          <li ng-repeat="item in todo.favorite">
+            <div class="d-flex justify-content-between">
+              <div> <p> {{ item.title }} </p> </div>
+              <div> <p> {{ item.type }} </p> </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
 
     <script src="js/app.js"></script>
     <script src="js/todo.controller.js"></script>
