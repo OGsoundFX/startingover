@@ -37,13 +37,16 @@
           <div class="d-flex justify-content-between">
             <div> <p> {{ item.title }} </p> </div>
             <div> <p> {{ item.type }} </p> </div>
-            <div> <a href="" ng-click="todo.addToFavorite(item);"> Add to Favorite </a> </div>
+            <!-- <div> <a href="" ng-click="todo.addToFavorite(item);"> Add to Favorite </a> </div> -->
+            <div> <a href="" ng-click="todo.removeTodo(item, $index);"> Delete </a> </div>
           </div>
         </li>
       </ul>
-      <div class="d-flex justify-content-center">
+      <p ng-hide="todo.remaining() === 0" class="todo__remaining">You have {{ todo.remaining() }} remaining tasks out of {{ todo.list.length }} </p>
+      <p ng-hide="todo.remaining() != 0" class="todo__remaining">You have completed all your {{ todo.list.length }} tasks! </p>
+      <!-- <div class="d-flex justify-content-center">
         <h1> Favorites List </h1>
-    </div>
+      </div>
       <div class="todo">
         <ul>
           <li ng-repeat="item in todo.favorite">
@@ -53,11 +56,18 @@
             </div>
           </li>
         </ul>
+      </div> -->
+      <div class="todo" ng-controller="ApiController as api">
+        <form ng-submit="api.getUser()">
+          <input type="text" ng-model="api.userId">
+          <input type="submit">
+        </form>
       </div>
     </div>
 
 
     <script src="js/app.js"></script>
     <script src="js/todo.controller.js"></script>
+    <script src="js/api.controller.js"></script>
   </body>
 </html>

@@ -38,9 +38,16 @@ function TodoController() {
     };
 
     this.addToFavorite = (item) => {
-        console.log(item);
         this.favorite.push(item);
-        console.log(this.favorite);
+    };
+    
+    this.removeTodo = (item, index) => {
+        this.list.splice(index, 1)
+    }
+
+    this.remaining = () => {
+        let result = this.list.filter((obj) => obj.completed === false).length;
+        return result;
     };
 };
 
