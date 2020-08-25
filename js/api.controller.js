@@ -14,15 +14,17 @@
 
 function ApiController($http) {
     API = '//localhost:3000/parentheses';
-    this.request = { string: "((test)"};
+    this.entry = "";
     this.getUser = () => {
+        console.log(this.entry);
         $http
-            .post(API, this.request)
+            .post(API, { string: this.entry} )
             .then(function (response) {
-                console.log(response);
+                console.log(response.data.isValid);
             }, function (reason) {
 
             })
+        this.entry = "";
     };
 }
 
