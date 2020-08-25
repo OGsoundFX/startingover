@@ -62,12 +62,27 @@
           <input type="text" ng-model="api.entry">
           <input type="submit">
         </form>
+        <!-- <p> {{ api.result.isValid | json }} </p> -->
+        <p ng-show="api.result.isValid === true"> Valid </p>
+        <p ng-show="api.result.isValid != true"> Invalid </p>
+        <p> Erroneos parentheses: {{ api.result.errorDetails.erroneosParentheses | json }} </p>
+        <p> Preceeding parentheses: {{ api.result.errorDetails.preceedingParentheses | json }} </p>
       </div>
     </div>
 
+    <div class="todo" ng-controller="UserController as user">
+      <form ng-submit="user.getUser();">
+        <input type="text" placeholder="input user ID" ng-model="user.userId">
+        <input type="submit">
+      </form>
+      <p> {{ user.result.name | json }} </p>
+      <p> {{ user.result.address.city | json }} </p>
+    </div>
 
     <script src="js/app.js"></script>
     <script src="js/todo.controller.js"></script>
     <script src="js/api.controller.js"></script>
+    <script src="js/user.controller.js"></script>
+    <script src="js/user.service.js"></script> -->
   </body>
 </html>
