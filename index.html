@@ -5,9 +5,38 @@
     <title>Todo Client</title>
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <script src="js/libs/angular.js"></script>
+    <style>
+      .red {background: pink;}
+      .yellow {background: rgb(187, 243, 74);}
+      .green {background: rgb(92, 214, 92)}
+    </style>
   </head>
   <body>
-    
+    <div class="d-flex justify-content-center">
+      <h1> Todo List </h1>
+  </div>
+    <div class="todo" ng-controller="TodoController as todo">
+      <ul class="todo__list" >
+        <li
+          ng-class="{
+            red: item.difficulty === 'hard',
+            yellow: item.difficulty === 'medium',
+            green: item.difficulty === 'easy'
+          }"
+          ng-repeat="item in todo.list">
+          <input type="checkbox" id="todo-{{ $index }}" ng-model="item.completed">
+          <label class="toggle" for="todo-{{ $index }}"></label>
+          <div class="d-flex justify-content-between">
+            <div> <p> {{ item.title }} </p> </div>
+            <div> <input type="text" ng-model="item.title"> </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script src="js/todo.controller.js"></script>
   </body>
 </html>
