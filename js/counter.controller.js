@@ -1,5 +1,4 @@
 function CounterController() {
-    this.count = 0;
     this.increment = () => {
         this.count ++;
     };

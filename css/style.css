@@ -225,3 +225,7 @@ input[type=checkbox]:checked + .toggle:after {
   border-radius: 4px;
   width: 350px !important;
 }
+
+.counter {
+  padding: 16px 20px 0px 0px;
+}

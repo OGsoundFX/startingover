@@ -82,12 +82,26 @@
     </div>
 
     <!-- <div ng-controller="CounterController as counter"> -->
-    <div>
-      <counter></counter>
+    <div ng-controller="OrderController as order">
+      <div class="d-flex justify-content-center">
+        <div>
+          <h4 class="counter mt-5">{{ order.orderName }}: </h4>
+        </div>
+        <div>
+          <counter name="{{order.orderName}}" count="order.orderQuantity"></counter>
+        </div>
+      </div>
     </div>
 
-    <div>
-      <counter></counter>
+    <div ng-controller="OrderController as order">
+      <div class="d-flex justify-content-center">
+        <div>
+          <h4 class="counter mt-5"> {{ order.orderName }} </h4>
+        </div>
+        <div>
+          <counter name="{{order.orderName}}" count="order.orderQuantity"></counter>
+        </div>
+      </div>
     </div>
 
     <script src="js/app.js"></script>
@@ -98,5 +112,6 @@
     <script src="js/stretch.directive.js"></script>
     <script src="js/counter.controller.js"></script>
     <script src="js/counter.directive.js"></script>
+    <script src="js/order.controller.js"></script>
   </body>
 </html>

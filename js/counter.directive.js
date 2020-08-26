@@ -1,6 +1,10 @@
 function counter () {
     return {
         scope: {},
+        bindToController: {
+            count: '=', // '=count'
+            name: '@' // @ gives access to the read only property, also same as '=name' in case both ar the same
+        },
         restrict: 'E',
         controller: 'CounterController as counter',
         templateUrl: '../tmpl/counter.html',
