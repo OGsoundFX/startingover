@@ -4,18 +4,14 @@ function stretch() {
         link: function ($scope, $element, $attrs) {
             var element = $element[0];
             element.addEventListener('focus', function() {
-                console.log("working?");
-                this.style.width = 500;
+                this.style.width = "500px";
             });
             element.addEventListener('blur', function() {
-                console.log('back to blur');
-                this.style.width = 120;
+                this.style.width = "120px";
             });
         }
     };
 }
-
-
 
 angular
     .module('app')
