@@ -215,3 +215,13 @@ input[type=checkbox]:checked + .toggle:after {
 .blue {
   border:solid 5px red; width: 200px;
 }
+
+.btn {
+  height: 50px;
+}
+
+.borderline {
+  border: solid 3px #b2eeef;
+  border-radius: 4px;
+  width: 350px !important;
+}
