@@ -59,7 +59,9 @@
       </div> -->
       <div class="todo" ng-controller="ApiController as api">
         <form ng-submit="api.getUser()">
-          <input type="text" ng-model="api.entry">
+          <input type="text"
+            ng-model="api.entry"
+            stretch>
           <input type="submit">
         </form>
         <!-- <p> {{ api.result.isValid | json }} </p> -->
@@ -72,7 +74,7 @@
 
     <div class="todo" ng-controller="UserController as user">
       <form ng-submit="user.getUser();">
-        <input type="text" placeholder="input user ID" ng-model="user.userId">
+        <input type="text" placeholder="input user ID" ng-model="user.userId" stretch>
         <input type="submit">
       </form>
       <p> {{ user.result.name | json }} </p>
@@ -83,6 +85,7 @@
     <script src="js/todo.controller.js"></script>
     <script src="js/api.controller.js"></script>
     <script src="js/user.controller.js"></script>
-    <script src="js/user.service.js"></script> -->
+    <script src="js/user.service.js"></script>
+    <script src="js/stretch.directive.js"></script>
   </body>
 </html>
