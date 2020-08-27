@@ -1,16 +1,5 @@
-// function ApiController($http) {
-//     API = '//jsonplaceholder.typicode.com/users/';
-//     this.userId = "";
-//     this.getUser = () => {
-//         $http
-//             .get(API + this.userId)
-//             .then(function (response) {
-//                 console.log(response);
-//             }, function (reason) {
-
-//             })
-//     };
-// }
+// Best practise is to go through a service to handle the $http rather than directly in the controller
+// See user.service.js and user.controller.js
 
 function ApiController($http) {
     API = '//localhost:3000/parentheses';

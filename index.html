@@ -104,6 +104,10 @@
       </div>
     </div>
 
+    <div ng-controller="PurchaseController as purchase">
+      <purchase-form data="purchase.customerPurchase" submit="purchase.submitPurchase();"></purchase-form>
+    </div>
+
     <script src="js/app.js"></script>
     <script src="js/todo.controller.js"></script>
     <script src="js/api.controller.js"></script>
@@ -113,5 +117,10 @@
     <script src="js/counter.controller.js"></script>
     <script src="js/counter.directive.js"></script>
     <script src="js/order.controller.js"></script>
+
+    <!-- form -->
+    <script src="js/purchase.controller.js"></script>
+    <script src="js/purchase-form.directive.js"></script>
+    <script src="js/purchase-form.controller.js"></script>
   </body>
 </html>
