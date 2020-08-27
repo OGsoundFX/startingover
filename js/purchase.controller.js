@@ -1,4 +1,6 @@
 function PurchaseController() {
+    this.test = "just testing";
+
     this.customerPurchase = {
         name: '',
         email: '',
@@ -10,7 +12,6 @@ function PurchaseController() {
         comment: ''
     };
     this.submitPurchase = () => {
-
     };
 }
 

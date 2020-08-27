@@ -15,6 +15,8 @@ function PurchaseFormController() {
     ];
     this.onSubmit = () => {
         this.submit();
+        // This submit() refers to the from the <purchase-form submit="purchase.submitPurchase();"> in the index.html
+        // I think this controller is kind of located inside the main controller: purchase.controller.js
     }
 };
 
