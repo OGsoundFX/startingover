@@ -95,10 +95,21 @@
       </div>
     </div>
 
-    <div ng-controller="OrderController as order">
+    <div ng-controller="Order2Controller as order">
       <div class="d-flex justify-content-center">
         <div>
-          <h4 class="counter mt-5"> {{ order.orderName }} </h4>
+          <h4 class="counter mt-5">{{ order.orderName }}: </h4>
+        </div>
+        <div>
+          <counter name="{{order.orderName}}" count="order.orderQuantity"></counter>
+        </div>
+      </div>
+    </div>
+
+    <div ng-controller="Order3Controller as order">
+      <div class="d-flex justify-content-center">
+        <div>
+          <h4 class="counter mt-5">{{ order.orderName }}: </h4>
         </div>
         <div>
           <counter name="{{order.orderName}}" count="order.orderQuantity"></counter>
@@ -119,6 +130,9 @@
     <script src="js/counter.controller.js"></script>
     <script src="js/counter.directive.js"></script>
     <script src="js/order.controller.js"></script>
+
+    <script src="js/order2.controller.js"></script>
+    <script src="js/order3.controller.js"></script>
 
     <!-- form -->
     <script src="js/purchase.controller.js"></script>

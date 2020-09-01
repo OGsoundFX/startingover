@@ -34,3 +34,9 @@ function counter () {
 angular
     .module('app')
     .directive('counter', counter);
+
+
+// Controllers:
+// - The Counter Controller is the one linked to the counter HTML from the template. There is only one, and can be re-used indefinitely.
+// - On the other hand, the Order Controllers are for each food instance. There has to be as many controllers as elements.
+// bindToController has this role of binding the directive to such controller individually.
